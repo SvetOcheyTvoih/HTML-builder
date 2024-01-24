@@ -24,3 +24,9 @@ rl.on('close', () => {
   stdout.write(`\nYour input (if entered) has been written into 'text.txt'. Goodbye!\n`);
   process.exit();
 });
+
+rl.on('SIGINT', () => {
+  stdout.write(`\n'Ctrl + C' has been pressed. Closing the session.\n`);
+  process.exit();
+  }
+);
